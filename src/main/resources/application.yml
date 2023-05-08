@@ -1,0 +1,55 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:test
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+  jpa:
+    hibernate:
+      ddl-auto: create  # ??? ??? ?? ? ??
+    show-sql: true      # ??? sql ??
+    properties:
+      hibernate:
+        format_sql: true # sql ??? ??
+        default_batch_fetch_size: 500 # ??? ??? ?? ? ?? ???
+    open-in-view: false # ??? ????? ?? ??? ???? ??? ??
+  servlet:
+    multipart:
+      max-file-size: 10MB # ?? ??? ?? ? ??? ?? ??? 10MB? ???
+      max-request-size: 100MB # ?? ??? ?? ? ?? ?? ???? 100MB ???
+
+logging:
+  level:
+    org.hibernate.type: trace # ???? ??? ????? ? ? ?? ?? ??
+    com.app: debug # todo 패키지 수정
+
+    
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+
+kakao:
+  client:
+    id: ENC(Nt56uhsoHdKKdKU56gf0MZzpjc7vmUxWaJXbpIlotiiaj/B4PtJJ7hC5cco7x9E0)
+    secret: ENC(uO6wB8w4OSlYGWw3TeaFLrZ7bpf/AYQXIkduE56ooIWqdfZAmL1Lx1ny/f4f/VAd)
+
+token:
+  secret: ENC(zAK/KsDb22cYwqpPwoVvsvwEFtK8joI1CiHnSSKdwxrQGTnSV3YPSA==) # todo 임의의 문자열
+  access-token-expiration-time: 900000 # todo 15분 1000(ms) x 60(s) x 15(m)
+  refresh-token-expiration-time: 1209600000 # todo 2주 1000(ms) x 60 (s) x 60(m) x 24(h) x 14(d)
+
+jasypt:
+  password: ${PASSWORD}
