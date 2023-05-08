@@ -1,5 +1,5 @@
-# spring-api-templat
-스프링 api 템플릿 프로젝트
+# 날씨별 코디 추천 프로젝트
+* 날씨에 따라 추천되는 코디를 제공하는 API 서버
 
 # 개발 환경
 * Build Tool : Gradle
