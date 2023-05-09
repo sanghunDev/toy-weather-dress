@@ -11,5 +11,3 @@
 * Spring Data JPA
 * Validation
 * Lombok
-* H2 Database
-* Thymeleaf
