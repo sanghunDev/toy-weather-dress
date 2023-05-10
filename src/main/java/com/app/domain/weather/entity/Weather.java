@@ -26,6 +26,4 @@ public class Weather extends BaseTimeEntity {
 
     private Double humid;   // 습도
 
-    private LocalDateTime createdTime;  // 생성 시간
-
 }
