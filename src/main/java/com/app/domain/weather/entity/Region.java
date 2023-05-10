@@ -1,5 +1,6 @@
 package com.app.domain.weather.entity;
 
+import com.app.domain.common.BaseTimeEntity;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Region {
+public class Region extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,5 +28,4 @@ public class Region {
 
     private int ny;
 
-    private LocalDateTime createdTime;  // 생성 시간
 }
